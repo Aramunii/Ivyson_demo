@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Ivyson_Demo-1.0";
 const contentToCache = [
-    "Build/teste.loader.js",
-    "Build/teste.framework.js",
-    "Build/teste.data",
-    "Build/teste.wasm",
+    "Build/Ivyson_demo.loader.js",
+    "Build/Ivyson_demo.framework.js",
+    "Build/Ivyson_demo.data",
+    "Build/Ivyson_demo.wasm",
     "TemplateData/style.css"
 
 ];
