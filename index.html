@@ -53,6 +53,19 @@
       var fullscreenButton = document.querySelector("#start_game");
       var warningBanner = document.querySelector("#unity-warning");
 
+
+      var elem = document.getElementById("myvideo");
+   
+        function openFullscreen() {
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) { /* Safari */
+          container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) { /* IE11 */
+          container.msRequestFullscreen();
+        }
+        }
+
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -130,9 +143,12 @@
                 loadingBar.style.display = "none";
                 fullscreenButton.style.display = "block";
                 fullscreenButton.onclick = () => {
+                  
                   document.getElementById("unity-canvas").style.display = "block";
                   fullscreenButton.style.display = "none";
                   unityInstance.SetFullscreen(1);
+
+                  setTimeout(openFullscreen(),1000);
                 };
               }).catch((message) => {
                 alert(message);
